@@ -35,13 +35,13 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 
 	@Override
 	public void showPlayerOn() {
-		statusText.setText("Player: TURN ON");
+		statusText.setText("ON");
 
 	}
 
 	@Override
 	public void showPlayerOff() {
-		statusText.setText("Player: TURN OFF");
+		statusText.setText("OFF");
 
 	}
 
@@ -53,42 +53,42 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 
 	@Override
 	public void showPlaying() {
-		statusText.setText("Player: PLAYING");
+		statusText.setText("PLAYING");
 
 	}
 
 	@Override
 	public void showPaused() {
-		statusText.setText("Player: PAUSED");
+		statusText.setText("PAUSED");
 
 	}
 
 	@Override
 	public void showStopped() {
-		statusText.setText("Player: STOP");
+		statusText.setText("STOP");
 
 	}
 
 	@Override
 	public void showRewinding() {
-		statusText.setText("Player: REWIND");
+		statusText.setText("REWIND");
 
 	}
 
 	@Override
 	public void showFastForwarding() {
-		statusText.setText("Player: FAST FORWARD");
+		statusText.setText("FAST FORWARD");
 
 	}
 
 	@Override
 	public void showScreenSaverOn() {
-		statusText.setText("Player: SCREEN SAVER ON");
+		statusText.setText("SCREEN SAVER ON");
 	}
 
 	@Override
 	public void showScreenSaverOff() {
-		statusText.setText("Player: SCREEN SAVER OFF");
+		statusText.setText("SCREEN SAVER OFF");
 
 	}
 
