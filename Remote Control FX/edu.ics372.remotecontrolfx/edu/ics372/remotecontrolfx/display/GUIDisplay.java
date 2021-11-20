@@ -28,7 +28,7 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 
 	@Override
 	public void showTimeLeft(int time) {
-		statusText.setText(" " + time);
+		timerValue.setText(" " + time);
 
 	}
 
