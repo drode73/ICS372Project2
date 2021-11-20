@@ -31,32 +31,32 @@ public interface VideoPlayerDisplay {
 	public void showPlaying();
 
 	/**
-	 * indicate that the selected show is paused
+	 * Indicate that the selected show is paused
 	 */
 	public void showPaused();
 
 	/**
-	 * indicate that the selected show is stopped
+	 * Indicate that the selected show is stopped
 	 */
 	public void showStopped();
 
 	/**
-	 * indicate that the selected show is rewinding
+	 * Indicate that the selected show is rewinding
 	 */
 	public void showRewinding();
 
 	/**
-	 * indicate that the selected show is fast forwarding
+	 * Indicate that the selected show is fast forwarding
 	 */
 	public void showFastForwarding();
 
 	/**
-	 * indicate that the screen saver is ON
+	 * Indicate that the screen saver is ON
 	 */
 	public void showScreenSaverOn();
 
 	/**
-	 * indicate that the screen saver is OFF
+	 * Indicate that the screen saver is OFF
 	 */
 	public void showScreenSaverOff();
 
