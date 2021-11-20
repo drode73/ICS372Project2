@@ -45,7 +45,7 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 		rewindShow = new RewindButton("Rew");
 
 		// Current Status of the Player
-		statusText = new Label("Status: Player off");
+		statusText = new Label("Player OFF");
 		statusText.setMinWidth(50);
 		statusText.setMinHeight(50);
 
