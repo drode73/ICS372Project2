@@ -15,7 +15,7 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 	private GUIButton pauseShow;
 	private GUIButton playShow;
 	private GUIButton rewindShow;
-	private GUIButton fastForwardShow;
+	private GUIButton fastforwardShow;
 	private GUIButton stopShow;
 	private Label statusText;
 	private ListView<Show> showList;
