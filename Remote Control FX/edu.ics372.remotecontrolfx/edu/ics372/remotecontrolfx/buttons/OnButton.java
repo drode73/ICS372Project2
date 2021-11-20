@@ -1,5 +1,6 @@
 package edu.ics372.remotecontrolfx.buttons;
 
+import edu.ics372.remotecontrolfx.states.PlayerContext;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -12,7 +13,7 @@ public class OnButton extends GUIButton implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().onOnRequest();
 
 	}
 

@@ -23,13 +23,12 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// Need Info for the Interface
-		// Might need the State Packages with it (PlayerContext)
+
 	}
 
 	@Override
 	public void showTimeLeft(int time) {
-		timerValue.setText(" " + time);
+		statusText.setText(" " + time);
 
 	}
 
@@ -46,7 +45,7 @@ public class GUIDisplay extends Application implements VideoPlayerDisplay {
 	}
 
 	@Override
-	public void showSelectedShow(String showDetails) {
+	public void showSelectedShow(Show showDetails) {
 		statusText.setText("Player: Show selected [" + showDetails + "]");
 
 	}

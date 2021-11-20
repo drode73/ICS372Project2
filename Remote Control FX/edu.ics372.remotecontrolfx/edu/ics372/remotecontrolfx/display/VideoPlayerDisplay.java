@@ -1,5 +1,7 @@
 package edu.ics372.remotecontrolfx.display;
 
+import edu.ics372.remotecontrolfx.select.Show;
+
 public interface VideoPlayerDisplay {
 	/**
 	 * Displays the show time remaining
@@ -21,7 +23,7 @@ public interface VideoPlayerDisplay {
 	/**
 	 * Indicate that a show was selected
 	 */
-	public void showSelectedShow(String showDetails);
+	public void showSelectedShow(Show showDetails);
 
 	/**
 	 * Indicate that the selected show is playing
@@ -57,4 +59,5 @@ public interface VideoPlayerDisplay {
 	 * indicate that the screen saver is OFF
 	 */
 	public void showScreenSaverOff();
+
 }
