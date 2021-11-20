@@ -11,52 +11,52 @@ public interface VideoPlayerDisplay {
 	public void showTimeLeft(int time);
 
 	/**
-	 * Indicate that the player is ON
+	 * Player is ON
 	 */
 	public void showPlayerOn();
 
 	/**
-	 * Indicate that the player is OFF
+	 * Player is OFF
 	 */
 	public void showPlayerOff();
 
 	/**
-	 * Indicate that a show was selected
+	 * Select the show
 	 */
 	public void showSelectedShow(Show showDetails);
 
 	/**
-	 * Indicate that the selected show is playing
+	 * Show is playing on the Player
 	 */
 	public void showPlaying();
 
 	/**
-	 * Indicate that the selected show is paused
+	 * Show is paused on the Player
 	 */
 	public void showPaused();
 
 	/**
-	 * Indicate that the selected show is stopped
+	 * Show is stop on the Player
 	 */
 	public void showStopped();
 
 	/**
-	 * Indicate that the selected show is rewinding
+	 * Show is rewind on the Player
 	 */
 	public void showRewinding();
 
 	/**
-	 * Indicate that the selected show is fast forwarding
+	 * Show is fast-forward on the Player
 	 */
 	public void showFastForwarding();
 
 	/**
-	 * Indicate that the screen saver is ON
+	 * Screen saver is ON
 	 */
 	public void showScreenSaverOn();
 
 	/**
-	 * Indicate that the screen saver is OFF
+	 * Screen saver is OFF
 	 */
 	public void showScreenSaverOff();
 
