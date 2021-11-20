@@ -147,6 +147,13 @@ public class PlayerContext {
 	}
 
 	/**
+	 * Process select show request
+	 */
+	public void onSelectRequest(String showDetails) {
+		currentState.onSelectRequest(showDetails);
+	}
+
+	/**
 	 * Playing the show when being selected
 	 * 
 	 */
@@ -201,4 +208,5 @@ public class PlayerContext {
 	public void showScreenSaverOff() {
 		display.showScreenSaverOff();
 	}
+
 }

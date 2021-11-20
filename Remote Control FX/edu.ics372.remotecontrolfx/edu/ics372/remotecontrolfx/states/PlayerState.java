@@ -93,4 +93,11 @@ public abstract class PlayerState {
 	public void onShowEnds() {
 
 	}
+
+	/**
+	 * Request the show to be selected
+	 */
+	public void onSelectRequest(String showDetails) {
+
+	}
 }
