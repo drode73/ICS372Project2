@@ -1,0 +1,48 @@
+			Rewind
+
+
+package org.oobook.microwavev2fx.states;
+
+
+/**
+ * Represents the RewindState state
+ *
+ */
+public class RewindState extends RemoteState{
+	private static RewindState instance;
+
+	/**
+	 * Private constructor for the singleton pattern
+	 */
+	private RewindState () {
+		instance = this;
+	}
+
+	/**
+	 * For the singleton pattern
+	 * 
+	 * @return the object
+	 */
+	public static RewindState getInstance() {
+		if (instance == null) {
+			instance = new RewindState ();
+		}
+		return instance;
+	}
+
+	@Override
+	public void onDoorClose() {
+		RemoteContext.getInstance().changeState(RewindState.getInstance());
+	}
+
+
+
+
+
+/**
+	 * initialize the state
+	 * 
+	 */
+	@Override
+	public void enter() {
+		PlayerContext.getInstance().showPlayerOff();
