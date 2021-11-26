@@ -1,0 +1,51 @@
+
+
+
+package org.oobook.microwavev2fx.states;
+
+
+/**
+ * Represents the door opened state
+ *
+ */
+public class FastForwardState extends RemoteState{
+	private static FastForwardState instance;
+
+	/**
+	 * Private constructor for the singleton pattern
+	 */
+	private FastForwardState () {
+		instance = this;
+	}
+
+	/**
+	 * For the singleton pattern
+	 * 
+	 * @return the object
+	 */
+	public static FastForwardState getInstance() {
+		if (instance == null) {
+			instance = new DoorOpenState();
+		}
+		return instance;
+	}
+
+	@Override
+	public void onDoorClose() {
+		RemoteContext.getInstance().changeState(FastForwardState .getInstance());
+	}
+
+/**
+	 * initialize the state
+	 * 
+	 */
+	@Override
+	public void enter() {
+		MicrowaveContext.getInstance().showLightOff();
+	}
+
+	@Override
+	public void leave() {
+		MicrowaveContext.getInstance().showLightOn();
+	}
+}
