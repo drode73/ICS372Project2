@@ -16,18 +16,17 @@ public class OffState extends PlayerState {
 	}
 
 	public void onRequest() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().changeState(UnselectState.getInstance());
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().showVideoPlayerOff();
 
 	}
 
