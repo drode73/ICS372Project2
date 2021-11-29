@@ -28,15 +28,16 @@ public class UnselectState extends PlayerState implements Notifiable {
 
 	@Override
 	public void OnTimerTick(int timerValue) {
-		// Screen saver State
-		// PlayerContext State change-state
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onTimerRunsOut() {
-		// TODO Auto-generated method stub
-
+		// Screen saver State
+		ScreenSaverState.getInstance().setPreviousState(this);
+		// PlayerContext State change-state
+		PlayerContext.getInstance().changeState(ScreenSaverState.getInstance());
 	}
 
 	@Override
