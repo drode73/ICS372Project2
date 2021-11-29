@@ -8,12 +8,11 @@ public class OffButton extends GUIButton implements EventHandler<ActionEvent> {
 
 	public OffButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onOffRequest();
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().offRequest();
 	}
 
 }

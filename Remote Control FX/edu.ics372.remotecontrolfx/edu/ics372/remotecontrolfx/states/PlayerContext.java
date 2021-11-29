@@ -1,25 +1,27 @@
 package edu.ics372.remotecontrolfx.states;
 
-import edu.ics372.remotecontrolfx.display.VideoPlayerDisplay;
-import edu.ics372.remotecontrolfx.select.Show;
+import edu.ics372.remotecontrolfx.collections.Show;
+import edu.ics372.remotecontrolfx.display.PlayerDisplay;
 
 public class PlayerContext {
-	private VideoPlayerDisplay display;
+	private PlayerDisplay display;
 	private PlayerState currentState;
 	private static PlayerContext instance;
+	private Show show;
 
 	/**
-	 * Make it a singleton
+	 * Private constructor for singleton
 	 */
 	private PlayerContext() {
 		instance = this;
-		currentState = PlayerOffState.getInstance();
+		currentState = OffState.getInstance();
+
 	}
 
 	/**
-	 * Return the instance
+	 * Get single instance
 	 * 
-	 * @return the object
+	 * @return
 	 */
 	public static PlayerContext getInstance() {
 		if (instance == null) {
@@ -29,184 +31,99 @@ public class PlayerContext {
 	}
 
 	/**
-	 * The display could change. So we have to get its reference.
+	 * set display
 	 * 
-	 * @param display The current display object
+	 * @param display
 	 */
-	public void setDisplay(VideoPlayerDisplay display) {
+	public void setDisplay(PlayerDisplay display) {
 		this.display = display;
 	}
 
 	/**
-	 * Lets Player off state be the starting state adds the object as an observable
-	 * for clock
+	 * Lets idle unselected be the default starting state
 	 */
 	public void initialize() {
-		instance.changeState(PlayerOffState.getInstance());
-
+		// set state to idle unselected
+		// instance.changeState(idleState.getInstance());
 	}
 
 	/**
-	 * Called from the states to change the current state
+	 * Changes current state
 	 * 
-	 * @param nextState the next state
+	 * @param newState
 	 */
-	public void changeState(PlayerState nextState) {
+	public void changeState(PlayerState newState) {
 		currentState.leave();
-		currentState = nextState;
+		currentState = newState;
 		currentState.enter();
 	}
 
-	/**
-	 * Turn player ON request
-	 */
-	public void onOnRequest() {
-		currentState.onOnRequest();
+	public void showVideoPlayerOff() {
+		display.showTurnOff();
 	}
 
-	/**
-	 * Turn player OFF request
-	 */
-	public void onOffRequest() {
-		currentState.onOffRequest();
+	public void showSelected() {
+		display.showSelected(show.getShowName(), Integer.toString(show.getShowLength()));
 	}
 
-	/**
-	 * Play show PLAY request
-	 */
-	public void onPlayShowRequest() {
-		currentState.onPlayShowRequest();
+	public void showUnselected() {
+		display.showUnselected();
 	}
 
-	/**
-	 * Stop show STOP request
-	 */
-	public void onStopShowRequest() {
-		currentState.onStopShowRequest();
+	public void showSelectOff() {
+		display.showSelectingOff();
 	}
 
-	/**
-	 * Pause show PAUSE request
-	 */
-	public void onPauseShowRequest() {
-		currentState.onPauseShowRequest();
+	public void showScreenSaver() {
+		display.showScreenSaver();
+
 	}
 
-	/**
-	 * Fast-forward show FF request
-	 */
-	public void onFastForwardRequest() {
-		currentState.onFastForwardRequest();
-	}
-
-	/**
-	 * Rewind show REW request
-	 */
-	public void onRewindRequest() {
-		currentState.onRewindRequest();
-	}
-
-	/**
-	 * Select show request
-	 */
-	public void onSelectShowRequest(Show showDetails) {
-		currentState.onSelectShowRequest(showDetails);
-	}
-
-	/**
-	 * Show the time when it done
-	 * 
-	 * @param time time left for playing
-	 */
 	public void showTimeLeft(int time) {
-		display.showTimeLeft(time);
+		display.showTimeRemaining(time);
 	}
 
-	/**
-	 * Making the player turn on
-	 * 
-	 */
-	public void showPlayerOn() {
-		display.showPlayerOn();
+	public void offRequest() {
+		currentState.offRequest();
 	}
 
-	/**
-	 * Making the player turn off
-	 * 
-	 */
-	public void showPlayerOff() {
-		display.showPlayerOff();
+	public void onRequest() {
+		currentState.onRequest();
 	}
 
-	/**
-	 * Selecting the shows from the ShowList
-	 * 
-	 */
-	public void showSelectedShow(Show showDetails) {
-		display.showSelectedShow(showDetails);
+	public void selectRequest() {
+		currentState.selectRequest();
 	}
 
-	/**
-	 * Process select show request
-	 */
-	public void onSelectRequest(String showDetails) {
-		currentState.onSelectRequest(showDetails);
+	public void playShowRequest() {
+		currentState.playRequest();
 	}
 
-	/**
-	 * Playing the show when being selected
-	 * 
-	 */
-	public void showPlayingShow() {
-		display.showPlaying();
+	public void pauseRequest() {
+		currentState.onRequest();
 	}
 
-	/**
-	 * Pause the show when playing
-	 * 
-	 */
-	public void showPausedShow() {
-		display.showPaused();
+	public void stopRequest() {
+		currentState.stopRequest();
 	}
 
-	/**
-	 * Stop the show when playing
-	 * 
-	 */
-	public void showStoppedShow() {
-		display.showStopped();
+	public void rewindRequest() {
+		currentState.rewindRequest();
 	}
 
-	/**
-	 * Rewind the show when player is on
-	 * 
-	 */
-	public void showShowRewinding() {
-		display.showRewinding();
+	public void fastForwardRequest() {
+		currentState.fastFowardRequest();
 	}
 
-	/**
-	 * Fast-Forward the show when player is on
-	 * 
-	 */
-	public void showShowFastForwarding() {
-		display.showFastForwarding();
+	public PlayerState getCurrentState() {
+		return currentState;
 	}
 
-	/**
-	 * Turn on the ScreenSaver
-	 * 
-	 */
-	public void showScreenSaverOn() {
-		display.showScreenSaverOn();
+	public void setShow(Show show) {
+		this.show = show;
 	}
 
-	/**
-	 * Turn off the ScreenSaver
-	 * 
-	 */
-	public void showScreenSaverOff() {
-		display.showScreenSaverOff();
+	public Show getShow() {
+		return this.show;
 	}
-
 }

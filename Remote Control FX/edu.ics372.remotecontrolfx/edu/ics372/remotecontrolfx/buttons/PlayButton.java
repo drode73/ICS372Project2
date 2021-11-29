@@ -8,13 +8,12 @@ public class PlayButton extends GUIButton implements EventHandler<ActionEvent> {
 
 	public PlayButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onPlayShowRequest();
-
+	public void handle(ActionEvent event) {
+		// Process to play, if show is selected
+		PlayerContext.getInstance().playShowRequest();
 	}
 
 }

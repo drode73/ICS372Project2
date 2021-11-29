@@ -11,9 +11,8 @@ public class FastForwardButton extends GUIButton implements EventHandler<ActionE
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onFastForwardRequest();
-
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().fastForwardRequest();
 	}
 
 }

@@ -4,6 +4,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class Clock implements Runnable {
+
 	private Thread thread = new Thread(this);
 	private static Clock clock;
 	private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);

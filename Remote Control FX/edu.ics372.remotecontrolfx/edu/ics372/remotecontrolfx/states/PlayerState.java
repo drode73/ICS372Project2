@@ -1,103 +1,70 @@
 package edu.ics372.remotecontrolfx.states;
 
-import edu.ics372.remotecontrolfx.select.Show;
-
 public abstract class PlayerState {
 
-	protected boolean isShowSelected;
-	protected Show showSelected;
-
 	/**
-	 * Initialize the state
-	 */
-	public abstract void enter();
-
-	/**
-	 * Performs the action when leaving the state
+	 * leave current state
 	 */
 	public abstract void leave();
 
 	/**
-	 * Request the actions to be taken when the player system is ON
+	 * enter current state
 	 */
-	public void onOnRequest() {
+	public abstract void enter();
+
+	/**
+	 * Process play request
+	 */
+	public void playRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is OFF
+	 * Process pause
 	 */
-	public void onOffRequest() {
+	public void pauseRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is PLAYING
+	 * Process stop
 	 */
-	public void onPlayShowRequest() {
+	public void stopRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is STOP
+	 * Process rewind
 	 */
-	public void onStopShowRequest() {
+	public void rewindRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is PAUSE
+	 * Process fast forward
 	 */
-	public void onPauseShowRequest() {
+	public void fastFowardRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is FAST-FORWARD
+	 * Process off
 	 */
-	public void onFastForwardRequest() {
+	public void offRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system is REWIND
+	 * Process selection
 	 */
-	public void onRewindRequest() {
+	public void selectRequest() {
 
 	}
 
 	/**
-	 * Request the actions to be taken when the player system selected the show
+	 * process On
 	 */
-	public void onSelectShowRequest(Show show) {
-
-	}
-
-	/**
-	 * Process clock ticks when the timer runs out
-	 */
-	public void onTimerRunsOut() {
-
-	}
-
-	/**
-	 * Process clock ticks when the timer is running
-	 */
-	public void onTimerTick(int timerValue) {
-
-	}
-
-	/**
-	 * Request the actions to be taken when show ends
-	 */
-	public void onShowEnds() {
-
-	}
-
-	/**
-	 * Request the show to be selected
-	 */
-	public void onSelectRequest(String showDetails) {
+	public void onRequest() {
 
 	}
 }

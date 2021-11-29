@@ -1,107 +1,79 @@
 package edu.ics372.remotecontrolfx.display;
 
-import edu.ics372.remotecontrolfx.buttons.FastForwardButton;
 import edu.ics372.remotecontrolfx.buttons.GUIButton;
-import edu.ics372.remotecontrolfx.buttons.OffButton;
-import edu.ics372.remotecontrolfx.buttons.OnButton;
-import edu.ics372.remotecontrolfx.buttons.PauseButton;
-import edu.ics372.remotecontrolfx.buttons.PlayButton;
-import edu.ics372.remotecontrolfx.buttons.RewindButton;
-import edu.ics372.remotecontrolfx.buttons.StopButton;
-import edu.ics372.remotecontrolfx.select.Show;
 import javafx.application.Application;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class GUIDisplay extends Application implements VideoPlayerDisplay {
+public class GUIDisplay extends Application implements PlayerDisplay {
+	private GUIButton offButton;
+	private GUIButton onButton;
+	private GUIButton pauseButton;
+	private GUIButton playButton;
+	private GUIButton rewindButton;
+	private GUIButton fastForwardButton;
+	private GUIButton stopButton;
 
-	private GUIButton playerOn;
-	private GUIButton playerOff;
-	private GUIButton pauseShow;
-	private GUIButton playShow;
-	private GUIButton rewindShow;
-	private GUIButton fastforwardShow;
-	private GUIButton stopShow;
-	private Label statusText;
-	private ListView<Show> showList;
-	private Text timerValue = new Text("            ");
+	private Text playerStatus = new Text("Off\n");
+	private Text timerValue = new Text(" ");
+	private Text playingStatus = new Text("Not Started");
+	private Text showText = new Text("Shows");
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
-		playerOn = new OnButton("On");
-		playerOff = new OffButton("Off");
-		playShow = new PlayButton("Play");
-		stopShow = new StopButton("Stop");
-		pauseShow = new PauseButton("Pause");
-		fastforwardShow = new FastForwardButton("FF");
-		rewindShow = new RewindButton("Rew");
+	public void start(Stage arg0) throws Exception {
 
 	}
 
 	@Override
-	public void showTimeLeft(int time) {
-		timerValue.setText(" " + time);
+	public void showTimeRemaining(int time) {
+		timerValue.setText("Time Remaining: " + time + "\n");
 
 	}
 
 	@Override
-	public void showPlayerOn() {
-		statusText.setText("ON");
-
-	}
-
-	@Override
-	public void showPlayerOff() {
-		statusText.setText("OFF");
-
-	}
-
-	@Override
-	public void showSelectedShow(Show showDetails) {
-		statusText.setText("Player: Show selected [" + showDetails + "]");
-
-	}
-
-	@Override
-	public void showPlaying() {
-		statusText.setText("PLAYING");
+	public void showTurnOff() {
+		playerStatus.setText("Off\n");
 
 	}
 
 	@Override
 	public void showPaused() {
-		statusText.setText("PAUSED");
+		playerStatus.setText("Show Paused");
+
+	}
+
+	@Override
+	public void showPlaying() {
+		playerStatus.setText("Show Playing");
 
 	}
 
 	@Override
 	public void showStopped() {
-		statusText.setText("STOP");
+		playerStatus.setText("Show Stoped");
+	}
+
+	@Override
+	public void showSelected(String showName, String showLength) {
+		playerStatus.setText("Show selected: " + showName + "\nShow length: " + showLength + " seconds\n");
+		playingStatus.setText("Not Started");
 
 	}
 
 	@Override
-	public void showRewinding() {
-		statusText.setText("REWIND");
+	public void showUnselected() {
+		playerStatus.setText("Show unselected");
 
 	}
 
 	@Override
-	public void showFastForwarding() {
-		statusText.setText("FAST FORWARD");
-
+	public void showSelectingOff() {
+		playerStatus.setText("Off");
 	}
 
 	@Override
-	public void showScreenSaverOn() {
-		statusText.setText("SCREEN SAVER ON");
-	}
-
-	@Override
-	public void showScreenSaverOff() {
-		statusText.setText("SCREEN SAVER OFF");
+	public void showScreenSaver() {
+		playerStatus.setText("Screen Saver");
 
 	}
 

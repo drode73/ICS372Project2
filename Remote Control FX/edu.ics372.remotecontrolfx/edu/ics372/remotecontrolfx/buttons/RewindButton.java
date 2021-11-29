@@ -8,13 +8,11 @@ public class RewindButton extends GUIButton implements EventHandler<ActionEvent>
 
 	public RewindButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onRewindRequest();
-
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().rewindRequest();
 	}
 
 }

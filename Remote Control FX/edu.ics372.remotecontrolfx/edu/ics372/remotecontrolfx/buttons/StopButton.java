@@ -8,12 +8,11 @@ public class StopButton extends GUIButton implements EventHandler<ActionEvent> {
 
 	public StopButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onStopShowRequest();
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().stopRequest();
 	}
 
 }

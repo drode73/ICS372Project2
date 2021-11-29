@@ -8,13 +8,11 @@ public class OnButton extends GUIButton implements EventHandler<ActionEvent> {
 
 	public OnButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onOnRequest();
-
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().onRequest();
 	}
 
 }

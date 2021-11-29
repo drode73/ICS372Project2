@@ -8,13 +8,11 @@ public class PauseButton extends GUIButton implements EventHandler<ActionEvent> 
 
 	public PauseButton(String string) {
 		super(string);
-
 	}
 
 	@Override
-	public void handle(ActionEvent arg0) {
-		PlayerContext.getInstance().onPauseShowRequest();
-
+	public void handle(ActionEvent event) {
+		PlayerContext.getInstance().pauseRequest();
 	}
 
 }
