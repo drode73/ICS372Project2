@@ -5,5 +5,6 @@ module edu.ics372.remotecontrolfx {
 	requires javafx.graphics;
 
 	exports edu.ics372.remotecontrolfx.display to javafx.graphics;
+	exports edu.ics372.remotecontrolfx.start to javafx.graphics;
 
 }
