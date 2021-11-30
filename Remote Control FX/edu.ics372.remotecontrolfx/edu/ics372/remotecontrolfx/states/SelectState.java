@@ -32,12 +32,6 @@ public class SelectState extends PlayerState implements Notifiable {
 	}
 
 	@Override
-	public void onVideoRunsOut() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void leave() {
 		// TODO Auto-generated method stub
 

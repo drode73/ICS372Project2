@@ -26,10 +26,29 @@ public class UnselectState extends PlayerState implements Notifiable {
 		PlayerContext.getInstance().changeState(OffState.getInstance());
 	}
 
+	public void pauseRequest() {
+		timer.setTimeValue(10);
+	}
+
+	public void selectRequest() {
+		PlayerContext.getInstance().changeState(SelectState.getInstance());
+	}
+
+	public void playRequest() {
+		timer.setTimeValue(10);
+	}
+
+	public void rewindRequest() {
+		timer.setTimeValue(10);
+	}
+
+	public void fastFowardRequest() {
+		timer.setTimeValue(10);
+	}
+
 	@Override
 	public void OnTimerTick(int timerValue) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -40,13 +59,6 @@ public class UnselectState extends PlayerState implements Notifiable {
 		PlayerContext.getInstance().changeState(ScreenSaverState.getInstance());
 	}
 
-	@Override
-	public void onVideoRunsOut() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void leave() {
 		timer.stop();
 		timer = null;
@@ -56,7 +68,7 @@ public class UnselectState extends PlayerState implements Notifiable {
 	@Override
 	public void enter() {
 		timer = new Timer(this, 10);
-		PlayerContext.getInstance().showUnselected();
+		PlayerContext.getInstance().showUnselect();
 
 	}
 

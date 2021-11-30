@@ -1,5 +1,5 @@
 package edu.ics372.remotecontrolfx.states;
 
-public class PausedState {
+public class RewindState {
 
 }

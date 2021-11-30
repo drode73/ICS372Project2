@@ -62,16 +62,32 @@ public class PlayerContext {
 		display.showTurnOff();
 	}
 
-	public void showSelected() {
+	public void showSelect() {
 		display.showSelected(show.getShowName(), Integer.toString(show.getShowLength()));
 	}
 
-	public void showUnselected() {
+	public void showUnselect() {
 		display.showUnselected();
 	}
 
 	public void showSelectOff() {
 		display.showSelectingOff();
+	}
+
+	public void showStop() {
+		display.showStopped();
+	}
+
+	public void showPause() {
+		display.showPaused();
+	}
+
+	public void showRewind() {
+		display.showRewind();
+	}
+
+	public void showFastForward() {
+		display.showFastForward();
 	}
 
 	public void showScreenSaver() {

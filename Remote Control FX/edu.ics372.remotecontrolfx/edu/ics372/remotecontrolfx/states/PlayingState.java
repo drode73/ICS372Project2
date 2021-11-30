@@ -6,8 +6,8 @@ import edu.ics372.remotecontrolfx.timer.Timer;
 
 public class PlayingState extends PlayerState implements Notifiable {
 	private static PlayingState instance;
-	private Show show = null;
-	private Timer timer = null;
+	private Show show;
+	private Timer timer;
 
 	private PlayingState() {
 
@@ -28,12 +28,6 @@ public class PlayingState extends PlayerState implements Notifiable {
 
 	@Override
 	public void onTimerRunsOut() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onVideoRunsOut() {
 		// TODO Auto-generated method stub
 
 	}

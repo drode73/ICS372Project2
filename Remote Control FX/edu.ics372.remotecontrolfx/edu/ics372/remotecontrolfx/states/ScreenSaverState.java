@@ -35,7 +35,6 @@ public class ScreenSaverState extends PlayerState {
 	}
 
 	public void selectRequest() {
-		PlayerContext.getInstance().setShow(show);
 		PlayerContext.getInstance().changeState(previousState);
 	}
 
@@ -47,15 +46,32 @@ public class ScreenSaverState extends PlayerState {
 		}
 	}
 
+	public void pauseRequest() {
+		PlayerContext.getInstance().changeState(previousState);
+	}
+
+	public void stopRequest() {
+		PlayerContext.getInstance().changeState(previousState);
+	}
+
+	public void rewindRequest() {
+		PlayerContext.getInstance().changeState(previousState);
+	}
+
+	public void fastForwardRequest() {
+		PlayerContext.getInstance().changeState(previousState);
+	}
+
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().setShow(show);
 
 	}
 
 	@Override
 	public void enter() {
 		PlayerContext.getInstance().showScreenSaver();
+		this.show = PlayerContext.getInstance().getShow();
 
 	}
 

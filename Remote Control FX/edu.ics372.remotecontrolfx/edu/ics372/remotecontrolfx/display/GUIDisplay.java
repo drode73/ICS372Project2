@@ -51,21 +51,21 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 		HBox stage = new HBox();
 		VBox buttonControls = new VBox();
-		VBox displayContainer = new VBox();
+		VBox displaySystem = new VBox();
 		TextFlow statusDisplay = new TextFlow();
-		statusDisplay.setPadding(new Insets(5, 10, 10, 10));
+		statusDisplay.setPadding(new Insets(5, 5, 5, 5));
 		statusDisplay.setStyle("-fx-background-color: white;" + "-fx-border-color: black");
 		statusDisplay.setMinWidth(500);
-		statusDisplay.setMinHeight(140);
+		statusDisplay.setMinHeight(200);
 
 		statusDisplay.getChildren().addAll(playerStatus, showStatusText);
 		statusDisplay.getChildren().add(timerValue);
 		buttonControls.getChildren().addAll(onButton, offButton, playButton, stopButton, pauseButton, fastForwardButton,
 				rewindButton);
-		displayContainer.getChildren().addAll(statusDisplay, showText, shows);
-		stage.getChildren().addAll(buttonControls, displayContainer);
+		displaySystem.getChildren().addAll(statusDisplay, showText, shows);
+		stage.getChildren().addAll(buttonControls, displaySystem);
 
-		Scene scene = new Scene(stage, 555, 560);
+		Scene scene = new Scene(stage, 560, 550);
 		primaryStage.setScene(scene);
 
 		primaryStage.setTitle("Remote Control and Player Interface");
@@ -83,7 +83,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	@Override
 	public void showTimeRemaining(int time) {
-		timerValue.setText("Time Remaining: " + time + "\n");
+		timerValue.setText("Remaining: " + time + "\n");
 	}
 
 	@Override
@@ -104,7 +104,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	public void showPlaying() {
 		show = PlayerContext.getInstance().getShow();
 		playerStatus.setText("Show Playing");
-		showStatusText.setText("Show: " + show.getShowName() + "\nShow length: " + show.getShowLength() + " seconds\n");
+		showStatusText.setText(show.getShowName() + " " + show.getShowLength() + " seconds\n");
 
 	}
 
@@ -118,7 +118,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	@Override
 	public void showSelected(String showName, String showLength) {
 		playerStatus.setText("Selected Show");
-		showStatusText.setText("Show: " + showName + "\nShow length: " + showLength + " seconds\n");
+		showStatusText.setText("Show: " + showName + " Show length: " + showLength + " seconds\n");
 		timerValue.setText("");
 
 	}
@@ -141,6 +141,18 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 		playerStatus.setText("Screen Saver ON!");
 		showStatusText.setText("");
 		timerValue.setText("");
+
+	}
+
+	@Override
+	public void showRewind() {
+		playerStatus.setText("Rewind");
+
+	}
+
+	@Override
+	public void showFastForward() {
+		playerStatus.setText("Fast-Forward");
 
 	}
 

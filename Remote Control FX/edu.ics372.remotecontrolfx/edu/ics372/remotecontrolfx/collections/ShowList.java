@@ -13,7 +13,7 @@ public class ShowList {
 	 * Creates the showList
 	 */
 	private ShowList() {
-		defaultShows();
+		allShows();
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ShowList {
 		return shows.listIterator();
 	}
 
-	private void defaultShows() {
+	private void allShows() {
 		for (int i = 1; i < 6; i++) {
 			String showName = "N" + i;
 			int showLength = 10 * i;

@@ -28,6 +28,16 @@ public interface PlayerDisplay {
 	public void showStopped();
 
 	/**
+	 * 
+	 */
+	public void showRewind();
+
+	/**
+	 * 
+	 */
+	public void showFastForward();
+
+	/**
 	 * I gave this method a parameter just to check if selecting a show works. If
 	 * not needed we can delete the parameter.
 	 */
