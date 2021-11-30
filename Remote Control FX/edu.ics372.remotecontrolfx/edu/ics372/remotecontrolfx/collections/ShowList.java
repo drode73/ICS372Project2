@@ -32,7 +32,7 @@ public class ShowList {
 	 * Adding a show to the list
 	 * 
 	 * @param show
-	 * @return true iff show can be added
+	 * @return true if show can be added
 	 */
 	public boolean insertShow(Show show) {
 		return shows.add(show);
@@ -49,7 +49,7 @@ public class ShowList {
 	 * Removes a show from showList
 	 * 
 	 * @param showName
-	 * @return true iff show could be removed
+	 * @return true if show could be removed
 	 */
 	public boolean removeShow(String showName) {
 		Iterator<Show> iterator = getShowsIterator();

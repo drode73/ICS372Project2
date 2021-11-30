@@ -4,8 +4,19 @@ import edu.ics372.remotecontrolfx.states.PlayerContext;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+/**
+ * The button to pause the player system
+ * 
+ * @author Joshua
+ *
+ */
 public class PauseButton extends GUIButton implements EventHandler<ActionEvent> {
 
+	/**
+	 * The button for Pause the shows
+	 * 
+	 * @param string
+	 */
 	public PauseButton(String string) {
 		super(string);
 	}
