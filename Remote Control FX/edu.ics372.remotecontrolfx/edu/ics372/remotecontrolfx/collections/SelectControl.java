@@ -5,6 +5,14 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.ListView;
 
+/**
+ * Create a singleton class called ShowList with a list of Show objects. You
+ * need to figure out what a Show object should contain, The list could be an
+ * ObservableList. You could use the following code to select a show.
+ * 
+ * @author Joshua Vang
+ *
+ */
 public class SelectControl extends ListView {
 	public SelectControl() {
 		super(ShowList.getInstance().getShowsList()); // gets the ObservableList
