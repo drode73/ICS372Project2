@@ -40,8 +40,10 @@ public interface PlayerDisplay {
 	public void showFastForward();
 
 	/**
-	 * I gave this method a parameter just to check if selecting a show works. If
-	 * not needed we can delete the parameter.
+	 * Indicate the show name and the length
+	 * 
+	 * @param showName
+	 * @param showLength
 	 */
 	public void showSelected(String showName, String showLength);
 
