@@ -3,6 +3,15 @@ package edu.ics372.remotecontrolfx.timer;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+/**
+ * 
+ * Implements a clock as a Runnable. An object adapter that uses
+ * PropertyChangeSupport to implement the Observable part of the Observer
+ * pattern.
+ * 
+ * @author Joshua Vang
+ * 
+ */
 public class Clock implements Runnable {
 
 	private Thread thread = new Thread(this);

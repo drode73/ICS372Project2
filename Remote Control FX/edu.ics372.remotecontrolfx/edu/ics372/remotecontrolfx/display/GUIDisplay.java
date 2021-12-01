@@ -23,6 +23,12 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+/**
+ * GUI to implement the Player interface
+ * 
+ * @author Joshua Vang
+ *
+ */
 public class GUIDisplay extends Application implements PlayerDisplay {
 	private Show show;
 	private GUIButton offButton;
@@ -37,6 +43,9 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	private Text timerValue = new Text(" ");
 	private Text showText = new Text("Shows");
 
+	/**
+	 * Sets up the interface
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		offButton = new OffButton("OFF");
@@ -54,10 +63,13 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 		VBox displaySystem = new VBox();
 		TextFlow statusDisplay = new TextFlow();
 		statusDisplay.setPadding(new Insets(5, 5, 5, 5));
+
+		// Display the background and the border to see the status report
 		statusDisplay.setStyle("-fx-background-color: white;" + "-fx-border-color: black");
 		statusDisplay.setMinWidth(500);
 		statusDisplay.setMinHeight(200);
 
+		// The player interface will be turn off automatically
 		statusDisplay.getChildren().addAll(playerStatus, showStatusText);
 		statusDisplay.getChildren().add(timerValue);
 		buttonControls.getChildren().addAll(onButton, offButton, playButton, stopButton, pauseButton, fastForwardButton,
@@ -68,6 +80,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 		Scene scene = new Scene(stage, 560, 550);
 		primaryStage.setScene(scene);
 
+		// Title for the UserInterface
 		primaryStage.setTitle("Remote Control and Player Interface");
 		PlayerContext.getInstance().setDisplay(this);
 		primaryStage.show();
@@ -81,11 +94,17 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Create the timer for the show
+	 */
 	@Override
 	public void showTimeRemaining(int time) {
 		timerValue.setText("Remaining: " + time + "\n");
 	}
 
+	/**
+	 * Display the Off button to turn off the show
+	 */
 	@Override
 	public void showTurnOff() {
 		playerStatus.setText("Off\n");
@@ -94,12 +113,18 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Display the pause button to pause the show
+	 */
 	@Override
 	public void showPaused() {
 		playerStatus.setText("Show Paused");
 
 	}
 
+	/**
+	 * Display the play button to play the show
+	 */
 	@Override
 	public void showPlaying() {
 		show = PlayerContext.getInstance().getShow();
@@ -108,6 +133,9 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Display the stop button to stop the show
+	 */
 	@Override
 	public void showStopped() {
 		playerStatus.setText("Show Stoped");
@@ -115,6 +143,9 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 		timerValue.setText("");
 	}
 
+	/**
+	 * Make the user to select the shows
+	 */
 	@Override
 	public void showSelected(String showName, String showLength) {
 		playerStatus.setText("Selected Show");
@@ -123,6 +154,9 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Making sure that when turn on every buttons should enable to the player
+	 */
 	@Override
 	public void showUnselected() {
 		playerStatus.setText("On");
@@ -131,11 +165,17 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Making the Off button to turn off the player interface
+	 */
 	@Override
 	public void showSelectingOff() {
 		playerStatus.setText("Off");
 	}
 
+	/**
+	 * Display the Screen-Saver if nothing has been selected for 10 seconds
+	 */
 	@Override
 	public void showScreenSaver() {
 		playerStatus.setText("Screen Saver ON!");
@@ -144,12 +184,18 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 
 	}
 
+	/**
+	 * Display the rewind button to rewind the show
+	 */
 	@Override
 	public void showRewind() {
 		playerStatus.setText("Rewind");
 
 	}
 
+	/**
+	 * Display the Fast-Forward button to fast-forward the show
+	 */
 	@Override
 	public void showFastForward() {
 		playerStatus.setText("Fast-Forward");
