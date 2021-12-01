@@ -5,59 +5,59 @@ import edu.ics372.remotecontrolfx.collections.Show;
 public abstract class PlayerState {
 
 	/**
-	 * leave current state
+	 * Performs any necessary clean up while leaving the state
 	 */
 	public abstract void leave();
 
 	/**
-	 * enter current state
+	 * Initializes the state
 	 */
 	public abstract void enter();
 
 	/**
-	 * Process play request
+	 * Process Play request
 	 */
 	public void playRequest() {
 
 	}
 
 	/**
-	 * Process pause
+	 * Process Pause request
 	 */
 	public void pauseRequest() {
 
 	}
 
 	/**
-	 * Process stop
+	 * Process Stop request
 	 */
 	public void stopRequest() {
 
 	}
 
 	/**
-	 * Process rewind
+	 * Process Rewind request
 	 */
 	public void rewindRequest() {
 
 	}
 
 	/**
-	 * Process fast forward
+	 * Process Fast-Forward request
 	 */
 	public void fastFowardRequest() {
 
 	}
 
 	/**
-	 * Process off
+	 * Process a Off request
 	 */
 	public void offRequest() {
 
 	}
 
 	/**
-	 * Process selection
+	 * Process selection for the show
 	 * 
 	 * @param show
 	 */
@@ -66,7 +66,7 @@ public abstract class PlayerState {
 	}
 
 	/**
-	 * process On
+	 * Process a On request
 	 */
 	public void onRequest() {
 
