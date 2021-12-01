@@ -11,8 +11,10 @@ public class SelectControl extends ListView {
 		setOnMouseClicked(new EventHandler<Event>() {
 			@Override
 			public void handle(Event arg0) {
-
+				System.out.println("clicked on event " + getSelectionModel().getSelectedItem());
 				Show show = (Show) getSelectionModel().getSelectedItem();
+
+				// Code to use the Show object
 				PlayerContext.getInstance().setShow(show);
 				PlayerContext.getInstance().selectRequest(show);
 			}
