@@ -1,5 +1,7 @@
 package edu.ics372.remotecontrolfx.states;
 
+import edu.ics372.remotecontrolfx.collections.Show;
+
 public abstract class PlayerState {
 
 	/**
@@ -56,8 +58,10 @@ public abstract class PlayerState {
 
 	/**
 	 * Process selection
+	 * 
+	 * @param show
 	 */
-	public void selectRequest() {
+	public void selectRequest(Show show) {
 
 	}
 

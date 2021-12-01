@@ -30,7 +30,7 @@ public class ShowEndState extends PlayerState implements Notifiable {
 	@Override
 	public void enter() {
 		PlayerContext.getInstance().getShow().setElapsedTime(0);
-		PlayerContext.getInstance().showStop();
+		PlayerContext.getInstance().showStopped();
 		timer = new Timer(this, 10);
 		PlayerContext.getInstance().showTimeLeft(10);
 	}

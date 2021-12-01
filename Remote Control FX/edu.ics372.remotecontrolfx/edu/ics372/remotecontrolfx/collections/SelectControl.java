@@ -14,7 +14,7 @@ public class SelectControl extends ListView {
 
 				Show show = (Show) getSelectionModel().getSelectedItem();
 				PlayerContext.getInstance().setShow(show);
-				PlayerContext.getInstance().selectRequest();
+				PlayerContext.getInstance().selectRequest(show);
 			}
 		});
 

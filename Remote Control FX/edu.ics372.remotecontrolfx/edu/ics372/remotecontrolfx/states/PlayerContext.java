@@ -43,8 +43,7 @@ public class PlayerContext {
 	 * Lets idle unselected be the default starting state
 	 */
 	public void initialize() {
-		// set state to idle unselected
-		// instance.changeState(idleState.getInstance());
+		instance.changeState(ShowEndState.getInstance());
 	}
 
 	/**
@@ -62,23 +61,35 @@ public class PlayerContext {
 		display.showTurnOff();
 	}
 
-	public void showSelect() {
+	public void showSelected() {
 		display.showSelected(show.getShowName(), Integer.toString(show.getShowLength()));
 	}
 
-	public void showUnselect() {
+	public void showUnselected() {
 		display.showUnselected();
 	}
 
+	public void showStopped() {
+		display.showStopped();
+	}
+
+	/**
+	 * Marked to be deleted if not needed.
+	 */
 	public void showSelectOff() {
 		display.showSelectingOff();
 	}
 
-	public void showStop() {
-		display.showStopped();
+	public void showScreenSaver() {
+		display.showScreenSaver();
+
 	}
 
-	public void showPause() {
+	public void showPlaying() {
+		display.showPlaying();
+	}
+
+	public void showPaused() {
 		display.showPaused();
 	}
 
@@ -88,11 +99,6 @@ public class PlayerContext {
 
 	public void showFastForward() {
 		display.showFastForward();
-	}
-
-	public void showScreenSaver() {
-		display.showScreenSaver();
-
 	}
 
 	public void showTimeLeft(int time) {
@@ -107,8 +113,8 @@ public class PlayerContext {
 		currentState.onRequest();
 	}
 
-	public void selectRequest() {
-		currentState.selectRequest();
+	public void selectRequest(Show show) {
+		currentState.selectRequest(show);
 	}
 
 	public void playShowRequest() {
@@ -116,7 +122,7 @@ public class PlayerContext {
 	}
 
 	public void pauseRequest() {
-		currentState.onRequest();
+		currentState.pauseRequest();
 	}
 
 	public void stopRequest() {

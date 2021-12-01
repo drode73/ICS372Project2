@@ -68,7 +68,7 @@ public class UnselectState extends PlayerState implements Notifiable {
 	@Override
 	public void enter() {
 		timer = new Timer(this, 10);
-		PlayerContext.getInstance().showUnselect();
+		PlayerContext.getInstance().showUnselected();
 
 	}
 
