@@ -1,5 +1,31 @@
 package edu.ics372.remotecontrolfx.states;
 
-public class RewindState {
+import edu.ics372.remotecontrolfx.timer.Notifiable;
+
+public class RewindState extends PlayerState implements Notifiable {
+
+	@Override
+	public void OnTimerTick(int timerValue) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTimerRunsOut() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void leave() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void enter() {
+		// TODO Auto-generated method stub
+
+	}
 
 }

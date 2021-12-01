@@ -6,7 +6,7 @@ import edu.ics372.remotecontrolfx.timer.Timer;
 public class ShowEndState extends PlayerState implements Notifiable {
 
 	private static ShowEndState instance;
-	private Timer timer = null;
+	private Timer timer;
 
 	private ShowEndState() {
 
