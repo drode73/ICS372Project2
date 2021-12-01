@@ -1,9 +1,13 @@
 package edu.ics372.remotecontrolfx.states;
 
+import edu.ics372.remotecontrolfx.collections.Show;
 import edu.ics372.remotecontrolfx.timer.Notifiable;
+import edu.ics372.remotecontrolfx.timer.Timer;
 
 public class FastForwardState extends PlayerState implements Notifiable {
 
+	private Timer timer;
+	
 	@Override
 	public void OnTimerTick(int timerValue) {
 		// TODO Auto-generated method stub
@@ -12,19 +16,19 @@ public class FastForwardState extends PlayerState implements Notifiable {
 
 	@Override
 	public void onTimerRunsOut() {
-		// TODO Auto-generated method stub
+		timer.stop();
 
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().show
 
 	}
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().showFastForward();
 
 	}
 
