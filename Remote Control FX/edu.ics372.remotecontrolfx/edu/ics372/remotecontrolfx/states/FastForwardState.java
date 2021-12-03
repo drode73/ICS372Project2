@@ -18,7 +18,7 @@ public class FastForwardState extends PlayerState implements Notifiable {
 		if (instance == null) {
 			instance = new FastForwardState();
 		}
-		return instan
+		return instance;
 
 	@Override
 	public void OnTimerTick(int timerValue) {
