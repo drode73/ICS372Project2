@@ -3,6 +3,8 @@ package edu.ics372.remotecontrolfx.states;
 import edu.ics372.remotecontrolfx.timer.Notifiable;
 
 public class RewindState extends PlayerState implements Notifiable {
+	
+	private Timer timer;
 
 	@Override
 	public void OnTimerTick(int timerValue) {
@@ -24,7 +26,7 @@ public class RewindState extends PlayerState implements Notifiable {
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().Rewind();
 
 	}
 
