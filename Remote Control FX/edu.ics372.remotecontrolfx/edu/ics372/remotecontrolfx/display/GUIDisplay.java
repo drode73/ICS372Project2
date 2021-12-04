@@ -26,7 +26,7 @@ import javafx.stage.WindowEvent;
 /**
  * GUI to implement the Player interface
  * 
- * @author Joshua Vang
+ * @author George Lauture
  *
  */
 public class GUIDisplay extends Application implements PlayerDisplay {
@@ -118,7 +118,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showPaused() {
-		playerStatus.setText("Show Paused");
+		playerStatus.setText("Show Paused!\n");
 
 	}
 
@@ -128,7 +128,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	@Override
 	public void showPlaying() {
 		show = PlayerContext.getInstance().getShow();
-		playerStatus.setText("Show Playing");
+		playerStatus.setText("Show Playing:\n");
 		showStatusText.setText(show.getShowName() + " " + show.getShowLength() + " seconds\n");
 
 	}
@@ -138,7 +138,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showStopped() {
-		playerStatus.setText("Show Stoped");
+		playerStatus.setText("Show Ended\n");
 		showStatusText.setText("");
 		timerValue.setText("");
 	}
@@ -148,10 +148,9 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showSelected(String showName, String showLength) {
-		playerStatus.setText("Selected Show");
-		showStatusText.setText("Show: " + showName + " Show length: " + showLength + " seconds\n");
+		playerStatus.setText("Selected Show:\n");
+		showStatusText.setText("Show: " + showName + "\nShow length: " + showLength + " seconds\n");
 		timerValue.setText("");
-
 	}
 
 	/**
@@ -189,7 +188,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showRewind() {
-		playerStatus.setText("Rewind");
+		playerStatus.setText("Rewind!\n");
 
 	}
 
@@ -198,7 +197,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showFastForward() {
-		playerStatus.setText("Fast-Forward");
+		playerStatus.setText("FastForward!\n");
 
 	}
 
