@@ -197,7 +197,7 @@ public class GUIDisplay extends Application implements PlayerDisplay {
 	 */
 	@Override
 	public void showFastForward() {
-		playerStatus.setText("FastForward!\n");
+		playerStatus.setText("Fast Forward!\n");
 
 	}
 
