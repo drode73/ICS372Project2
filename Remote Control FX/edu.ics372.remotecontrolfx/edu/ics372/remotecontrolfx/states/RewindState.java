@@ -35,15 +35,13 @@ public class RewindState extends PlayerState implements Notifiable {
 	@Override
 	public void leave() {
 		timer.stop();
-		PlayerContext.getInstance().
+		PlayerContext.getInstance().showPlay();
 
 	}
 
 	@Override
 	public void enter() {
-
 		PlayerContext.getInstance().Rewind();
-		PlaverContext.getInstance().showRewind();
 
 
 	}

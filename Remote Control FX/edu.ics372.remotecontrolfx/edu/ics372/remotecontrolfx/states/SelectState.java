@@ -33,14 +33,13 @@ public class SelectState extends PlayerState implements Notifiable {
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		PlayerContext.getInstance().show();
 
 	}
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
-
+		PlayerContext.getInstance().showSelect();
 	}
 	
 	public void onRequest() {

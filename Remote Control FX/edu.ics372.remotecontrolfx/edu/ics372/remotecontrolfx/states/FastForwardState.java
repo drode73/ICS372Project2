@@ -35,7 +35,7 @@ public class FastForwardState extends PlayerState implements Notifiable {
 	@Override
 	public void leave() {
 		timer.stop();
-		PlayerContext.getInstance().
+		PlayerContext.getInstance().showPlay();
 
 	}
 
