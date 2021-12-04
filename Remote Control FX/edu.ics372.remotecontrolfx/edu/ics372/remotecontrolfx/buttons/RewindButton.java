@@ -7,8 +7,8 @@ import javafx.event.EventHandler;
 /**
  * The button for rewind the player system
  * 
- * @author Joshua
- *
+ * @author Donald Roden
+ * @Copyright (c) 2021
  */
 public class RewindButton extends GUIButton implements EventHandler<ActionEvent> {
 
