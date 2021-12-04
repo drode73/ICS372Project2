@@ -7,7 +7,8 @@ import javafx.event.EventHandler;
 /**
  * The button for Fast-Forward request
  * 
- * @author Joshua Vang
+ * @author Donald Roden
+ * @Copyright (c) 2021
  *
  */
 public class FastForwardButton extends GUIButton implements EventHandler<ActionEvent> {
