@@ -1,5 +1,10 @@
 package edu.ics372.remotecontrolfx.states;
 
+/**
+ * @author Joshua Vang
+  @Copyright (c) 2021
+ */
+
 import edu.ics372.remotecontrolfx.collections.Show;
 import edu.ics372.remotecontrolfx.display.PlayerDisplay;
 
@@ -45,10 +50,11 @@ public class PlayerContext {
 	}
 
 	/**
-	 * Lets Show End state be the starting state adds the object as an observable
+	 * Lets Off state be the starting state adds the object as an observable for
+	 * clock
 	 */
 	public void initialize() {
-		instance.changeState(ShowEndState.getInstance());
+		instance.changeState(OffState.getInstance());
 	}
 
 	/**
@@ -164,64 +170,63 @@ public class PlayerContext {
 	}
 
 	/**
-	 * Process a OFF button request
+	 * Process a Off request
 	 */
-
 	public void offRequest() {
 		currentState.offRequest();
 	}
 
 	/**
-	 * Process a ON button request
+	 * Process a On request
 	 */
 	public void onRequest() {
 		currentState.onRequest();
 	}
 
 	/**
-	 * Process to Select a request
+	 * Process a Select request
 	 */
 	public void selectRequest(Show show) {
 		currentState.selectRequest(show);
 	}
 
 	/**
-	 * Process Play request
+	 * Process a Play request
 	 */
 	public void playShowRequest() {
 		currentState.playRequest();
 	}
 
 	/**
-	 * Process Pause request
+	 * Process a Pause request
 	 */
 	public void pauseRequest() {
 		currentState.pauseRequest();
 	}
 
 	/**
-	 * Process Stop request
+	 * Process a Stop request
 	 */
 	public void stopRequest() {
 		currentState.stopRequest();
 	}
 
 	/**
-	 * Process Rewind request
+	 * Process a Rewind request
 	 */
 	public void rewindRequest() {
 		currentState.rewindRequest();
 	}
 
 	/**
-	 * Process Fast-Forward request
+	 * Process a Fast-Forward request
 	 */
 	public void fastForwardRequest() {
 		currentState.fastFowardRequest();
 	}
 
 	/**
-	 * Get the Current State from the PlayerState
+	 * Get the Current State of the Player
 	 * 
 	 * @return
 	 */
@@ -230,20 +235,16 @@ public class PlayerContext {
 	}
 
 	/**
-	 * Set the Show
-	 * 
-	 * @param show
-	 */
-	public void setShow(Show show) {
-		this.show = show;
-	}
-
-	/**
-	 * Get the show name
+	 * Get the show information
 	 * 
 	 * @return
 	 */
 	public Show getShow() {
 		return this.show;
 	}
+
+	public void setShow(Show show) {
+		this.show = show;
+	}
+
 }
