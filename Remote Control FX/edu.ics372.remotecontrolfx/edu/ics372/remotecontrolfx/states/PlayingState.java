@@ -40,8 +40,7 @@ public class PlayingState extends PlayerState implements Notifiable {
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
-
+		PlayerContext.getInstance().showPlayingState();
 	}
 
 }
