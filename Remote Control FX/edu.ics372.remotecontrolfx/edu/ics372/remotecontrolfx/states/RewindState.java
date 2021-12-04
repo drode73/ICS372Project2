@@ -6,28 +6,50 @@ public class RewindState extends PlayerState implements Notifiable {
 	
 	private Timer timer;
 
+	private PlayerState instance;
+	private Timer timer;
+	
+	private RewindState() {
+		
+	}
+
+	private RewindState getInstance() {
+		if (instance == null) {
+			instance = new RewindState();
+		}
+		return instance;
+	}
+		
 	@Override
 	public void OnTimerTick(int timerValue) {
-		// TODO Auto-generated method stub
-
+		PlayerContext.getInstance().showTimeLeft(timerValue);
 	}
 
 	@Override
 	public void onTimerRunsOut() {
-		// TODO Auto-generated method stub
+		ScreenSaverState.getInstance().setPreviousState(UnselectState.getInstance());
+		PlayerContext.getInstance().changeState(ScreenSaverState.getInstance());
 
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		timer.stop();
+		PlayerContext.getInstance().
 
 	}
 
 	@Override
 	public void enter() {
-		PlayerContext.getInstance().Rewind();
 
+		PlayerContext.getInstance().Rewind();
+		PlaverContext.getInstance().showRewind();
+
+
+	}
+	
+	public void offRequest() {
+		PlayerContext.getInstance().changeState(OffState.getInstance());
 	}
 
 }
