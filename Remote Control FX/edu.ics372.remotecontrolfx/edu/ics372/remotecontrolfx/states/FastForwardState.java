@@ -1,31 +1,51 @@
 package edu.ics372.remotecontrolfx.states;
 
+
+// Test commit
+
 import edu.ics372.remotecontrolfx.timer.Notifiable;
 
 public class FastForwardState extends PlayerState implements Notifiable {
+	
+	private PlayerState instance;
+	private Timer timer;
+	
+	private FastForwardState() {
+		
+	}
+
+	private FastForwardState getInstance() {
+		if (instance == null) {
+			instance = new FastForwardState();
+		}
+		return instance;
 
 	@Override
 	public void OnTimerTick(int timerValue) {
-		// TODO Auto-generated method stub
+			PlayerContext.getInstance().showTimeLeft(timerValue);
 
 	}
 
 	@Override
 	public void onTimerRunsOut() {
-		// TODO Auto-generated method stub
-
+		ScreenSaverState.getInstance().setPreviousState(UnselectState.getInstance());
+		PlayerContext.getInstance().changeState(ScreenSaverState.getInstance());
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		timer.stop();
+		PlayerContext.getInstance().
 
 	}
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
-
+		PlaverContext.getInstance().showFastForward();
+	}
+	
+	public void offRequest() {
+		PlayerContext.getInstance().changeState(OffState.getInstance());
 	}
 
 }
