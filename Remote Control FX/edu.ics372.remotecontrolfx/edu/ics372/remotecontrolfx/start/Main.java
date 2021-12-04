@@ -1,5 +1,9 @@
 package edu.ics372.remotecontrolfx.start;
 
+/**
+ * @author George Lauture
+ * @Copyright (c) 2021
+ */
 import edu.ics372.remotecontrolfx.display.GUIDisplay;
 import javafx.application.Application;
 
