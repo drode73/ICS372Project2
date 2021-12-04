@@ -7,7 +7,8 @@ import javafx.event.EventHandler;
 /**
  * The button to pause the player system
  * 
- * @author Joshua
+ * @author Kyle McClernon
+ * @Copyright (c) 2021
  *
  */
 public class PauseButton extends GUIButton implements EventHandler<ActionEvent> {
