@@ -1,7 +1,16 @@
 package edu.ics372.remotecontrolfx.states;
 
+/**
+ * @author Joshua Vang
+ * @Copyright (c) 2021
+ */
 import edu.ics372.remotecontrolfx.collections.Show;
 
+/**
+ * Super class for all states
+ * 
+ *
+ */
 public abstract class PlayerState {
 
 	/**
@@ -71,4 +80,5 @@ public abstract class PlayerState {
 	public void onRequest() {
 
 	}
+
 }
