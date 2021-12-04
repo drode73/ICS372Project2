@@ -10,7 +10,7 @@ import java.beans.PropertyChangeSupport;
  * pattern.
  * 
  * @author Joshua Vang
- * 
+ * @Copyright (c) 2021
  */
 public class Clock implements Runnable {
 
