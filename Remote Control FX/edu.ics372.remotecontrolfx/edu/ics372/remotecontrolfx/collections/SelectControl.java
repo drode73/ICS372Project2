@@ -10,8 +10,8 @@ import javafx.scene.control.ListView;
  * need to figure out what a Show object should contain, The list could be an
  * ObservableList. You could use the following code to select a show.
  * 
- * @author Joshua Vang
- *
+ * @author Kyle McClernon
+ * @Copyright (c) 2021
  */
 public class SelectControl extends ListView {
 	public SelectControl() {
@@ -19,7 +19,7 @@ public class SelectControl extends ListView {
 		setOnMouseClicked(new EventHandler<Event>() {
 			@Override
 			public void handle(Event arg0) {
-				System.out.println("clicked on event " + getSelectionModel().getSelectedItem());
+
 				Show show = (Show) getSelectionModel().getSelectedItem();
 
 				// Code to use the Show object
