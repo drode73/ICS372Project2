@@ -1,5 +1,9 @@
 package edu.ics372.remotecontrolfx.timer;
 
+/**
+ * @author Joshua Vang
+ * @Copyright (c) 2021
+ */
 public interface Notifiable {
 
 	/**
