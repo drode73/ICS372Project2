@@ -27,7 +27,7 @@ import javafx.stage.WindowEvent;
  * GUI to implement the Player interface
  * 
  * @author George Lauture
- *
+ * @Copyright (c) 2021
  */
 public class GUIDisplay extends Application implements PlayerDisplay {
 	private Show show;
